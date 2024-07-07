@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ms-payment
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/db_payment
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8082
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+
+mq:
+  queues:
+    TotalPoins: TotalPoins
